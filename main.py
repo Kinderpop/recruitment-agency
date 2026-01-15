@@ -51,6 +51,9 @@ def main():
             if n1 > n2:
                 print("Ошибка: N1 не может быть больше N2.")
                 continue
+            if n1 < 0  or n2 < 0:
+                print("Ошибка: значения N1 и N2 не могут быть отрицательными.")
+                continue
             filtered = filter_by_salary_range(vacancies, n1, n2)
             sorted_vac = sort_by_social_package_probation(filtered)
             print_vacancies(sorted_vac, f"Вакансии с окладом от {n1} до {n2} руб.")
@@ -65,4 +68,5 @@ def main():
         input("\nНажмите Enter для возврата в меню...")
 
 if __name__ == "__main__":
+
     main()
